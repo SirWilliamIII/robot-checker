@@ -8,9 +8,12 @@ def process_task_reports(task_reports):
     
     task_reports_x_cordinates = [t["report"]["robotCleaningSquareX"] for t in task_reports]
     task_reports_y_cordinates = [t["report"]["robotCleaningSquareY"] for t in task_reports]
-    pairs = list(zip(task_reports_x_cordinates, task_reports_y_cordinates))
+    pairs = zip(task_reports_x_cordinates, task_reports_y_cordinates)
 
-    for task_report in tqdm.tqdm(task_reports, desc="Processing task reports..."):
+    
+
+
+    for _ in tqdm.tqdm(task_reports, desc="Processing task reports..."):
         total_run_count += 1
         
         x = task_report["report"]["robotCleaningSquareX"]
